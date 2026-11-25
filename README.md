@@ -22,11 +22,9 @@ Ek özellikler: sonuçlardan diğer modüllere tek dokunuşla geçiş (ör. e-po
 Her `main` dalına gönderimde GitHub Actions APK'yı otomatik derler (yaklaşık 4–6 dakika).
 
 - **Son derleme:** [Actions](https://github.com/ahmetyilmaz15071984/-skorpit-/actions) → en üstteki başarılı "APK Derle" çalışması → en altta **Artifacts → OsintKit-apk** (zip içinde `OsintKit.apk`).
-- **Doğrudan APK:** [Releases](https://github.com/ahmetyilmaz15071984/-skorpit-/releases) sayfası. Yeni sürüm yayınlamak için `v1.0.0` gibi bir etiket gönderin:
-  ```bash
-  git tag v1.0.0
-  git push origin v1.0.0
-  ```
+- **Doğrudan APK (önerilen):** [Releases](https://github.com/ahmetyilmaz15071984/-skorpit-/releases) sayfası.
+  Yeni sürüm yayınlamak için (telefondan da olur): **Releases → Create a new release** → *Choose a tag* kutusuna `v1.0.0` yazıp **Create new tag** → **Publish release**.
+  Yaklaşık 3 dakika sonra `OsintKit.apk` o sürümün altına eklenir.
 
 ### Telefona kurma
 İndirilen `OsintKit.apk` dosyasını açın → istenirse **Bilinmeyen uygulamaları yükle** iznini verin → **Yükle**.

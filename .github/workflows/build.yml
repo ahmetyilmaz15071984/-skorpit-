@@ -3,9 +3,11 @@ name: APK Derle
 on:
   push:
     branches: [ main, master ]
-    tags: [ 'v*' ]
   pull_request:
   workflow_dispatch:
+  # GitHub'da "Release" yayınlanınca APK o sürüme eklenir
+  release:
+    types: [ published ]
 
 permissions:
   contents: write
@@ -33,14 +35,21 @@ jobs:
           ./gradlew assembleDebug --stacktrace
           cp app/build/outputs/apk/debug/app-debug.apk OsintKit.apk
 
+      - name: APK'yı doğrula (imza ve içerik)
+        run: |
+          BT="$ANDROID_HOME/build-tools/$(ls "$ANDROID_HOME/build-tools" | sort -V | tail -1)"
+          "$BT/apksigner" verify --print-certs OsintKit.apk
+          "$BT/aapt2" dump badging OsintKit.apk | grep -E "^(package|sdkVersion|targetSdkVersion|application-label):"
+          ls -lh OsintKit.apk
+
       - name: APK'yı Actions çıktısı olarak yükle
         uses: actions/upload-artifact@v4
         with:
           name: OsintKit-apk
           path: OsintKit.apk
 
-      - name: Etiket (v*) gönderildiyse Release oluştur
-        if: startsWith(github.ref, 'refs/tags/v')
+      - name: Yayınlanan Release'e APK'yı ekle
+        if: github.event_name == 'release'
         uses: softprops/action-gh-release@v2
         with:
           files: OsintKit.apk
