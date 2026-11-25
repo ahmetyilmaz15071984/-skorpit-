@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Büyüteç + nişangah: 108dp tuval, içerik 66dp güvenli alanda -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- mercek halkası -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FF4FD1C5"
+        android:strokeWidth="5"
+        android:pathData="M48,48m-17,0a17,17 0,1 1,34 0a17,17 0,1 1,-34 0" />
+    <!-- sap -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FF4FD1C5"
+        android:strokeWidth="7"
+        android:strokeLineCap="round"
+        android:pathData="M61,61L78,78" />
+    <!-- nişangah -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FFE6EDF3"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M48,37L48,43M48,53L48,59M37,48L43,48M53,48L59,48" />
+    <path
+        android:fillColor="#FFE6EDF3"
+        android:pathData="M48,48m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0" />
+</vector>

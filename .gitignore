@@ -33,3 +33,9 @@ google-services.json
 
 # Android Profiling
 *.hprof
+
+# Sabit debug imza anahtarı (her derleme aynı imzayı taşısın diye repoda)
+!app/debug.keystore
+
+# macOS
+.DS_Store
